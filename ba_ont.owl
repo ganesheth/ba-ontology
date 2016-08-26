@@ -1,0 +1,1022 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#"
+     xml:base="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl"
+     xmlns:td="http://www.w3c.org/wot/td#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:hvac_ont="hhttp://n.ethz.ch/student/ganeshr/ontologies/hvac_ont.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#quality -->
+
+    <rdfs:Datatype rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#quality"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains">
+        <owl:inverseOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#located_in"/>
+        <rdfs:domain rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+        <rdfs:domain rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Plant"/>
+        <rdfs:domain rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Space"/>
+        <rdfs:range rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#drives -->
+
+    <owl:ObjectProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#drives"/>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#hasInput"/>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#hasInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#hasInteraction"/>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#located_in -->
+
+    <owl:ObjectProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#located_in">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#measured_by -->
+
+    <owl:ObjectProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#measured_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#measures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#measures -->
+
+    <owl:ObjectProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#measures">
+        <rdfs:domain rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MeasurementComponent"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MeasurementComponent"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#served_by -->
+
+    <owl:ObjectProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#served_by">
+        <owl:inverseOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#serves"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#serves -->
+
+    <owl:ObjectProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#serves">
+        <rdfs:domain rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Plant"/>
+        <rdfs:range rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Space"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#suitable_for -->
+
+    <owl:ObjectProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#suitable_for">
+        <rdfs:domain rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#suitable_for"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Media"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#measures -->
+
+    <owl:DatatypeProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#measures">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Humidity</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#medium -->
+
+    <owl:DatatypeProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#medium">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#suitable_for"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Air</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Water</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#name">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#value -->
+
+    <owl:DatatypeProperty rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#value">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AHU -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AHU">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Plant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatExchanger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TemperatureSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Fan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AHU_Type_11 -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AHU_Type_11">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AHU"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#DiscreteSpeedFan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatingCoil"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TemperatureSensor"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#located_in"/>
+                                <owl:hasValue rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Return"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#suitable_for"/>
+                                <owl:hasValue rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Air"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TemperatureSensor"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#located_in"/>
+                                <owl:hasValue rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Supply"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#suitable_for"/>
+                                <owl:hasValue rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Air"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Air -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Air">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Analog -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Analog">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AnalogInput -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AnalogInput">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Input"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AnalogOutput -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AnalogOutput">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Output"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Binary -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Binary">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#BlindsController -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#BlindsController">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Controller"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Controller -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Controller">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Parameter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#drives"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#FlowControlComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#hasInput"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TemperatureSensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#CoolingCoil -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#CoolingCoil">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatExchanger"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Damper -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Damper">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#FlowControlComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Data -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Data"/>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#DigitalInput -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#DigitalInput">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Input"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#DigitalOutput -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#DigitalOutput">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Output"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#DimmableLamp -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#DimmableLamp">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Lamp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#DiscreteSpeedFan -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#DiscreteSpeedFan">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Fan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Duct -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Duct">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaTransport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#EnergyMassFlowLocation -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#EnergyMassFlowLocation">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#FCU -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#FCU">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Plant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Fan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#CoolingCoil"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Filter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatingCoil"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Fan -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Fan">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaDriver"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Filter -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Filter">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaProcessor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#FlowControlComponent -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#FlowControlComponent">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Gas -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Gas">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#GeographicalLocation -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#GeographicalLocation">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatExchanger -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatExchanger">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatingAndCoolingCoil -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatingAndCoolingCoil">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatExchanger"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatingCoil -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatingCoil">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HeatExchanger"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HumiditySensor -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#HumiditySensor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#suitable_for"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Air"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#hasInteraction"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AnalogInput"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TemperatureSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Indoor -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Indoor">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Input -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Input">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Lamp -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Lamp">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Lighting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#LightDimmer -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#LightDimmer">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Lighting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#LightSwitch -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#LightSwitch">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Lighting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Lighting -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Lighting">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Liquid -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Liquid">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Location -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Location"/>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Measurement -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Measurement">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MeasurementComponent -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MeasurementComponent">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Media -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Media"/>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaDriver -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaDriver">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaProcessor -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaProcessor">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaTransport -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaTransport">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Multistate -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Multistate">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Outdoor -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Outdoor">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Output -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Output">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Parameter -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Parameter">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Pipe -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Pipe">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaTransport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Plant -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Plant"/>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Pump -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Pump">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MediaDriver"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#suitable_for"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Liquid"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Room -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Room">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Sensor -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Sensor">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#MeasurementComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#SingleSpeedFan -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#SingleSpeedFan">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#DiscreteSpeedFan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Space -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Space"/>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#SunBlinds -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#SunBlinds">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TemperatureController -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TemperatureController">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Controller"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TemperatureSensor -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TemperatureSensor">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#hasInteraction"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#AnalogInput"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TwoWayValve -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#TwoWayValve">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Valve"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Valve -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Valve">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#FlowControlComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#VariableSpeedFan -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#VariableSpeedFan">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Fan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#VentilationController -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#VentilationController">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Controller"/>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#VentilationSystem -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#VentilationSystem">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Damper"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Filter"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#VariableSpeedFan"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Plant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Damper"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Fan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Filter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#contains"/>
+                <owl:someValuesFrom rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Sensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#VentliationSystem_Type_01 -->
+
+    <owl:Class rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#VentliationSystem_Type_01">
+        <rdfs:subClassOf rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#VentilationSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Air -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Air">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Media"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Bypass -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Bypass">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#EnergyMassFlowLocation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Exhaust -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Exhaust">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#EnergyMassFlowLocation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Humidity -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Humidity">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Measurement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Intake -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Intake">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#EnergyMassFlowLocation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Offset -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Offset">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Analog"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Return -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Return">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#EnergyMassFlowLocation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Setpoint -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Setpoint">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Analog"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Slope -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Slope">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Analog"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Supply -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Supply">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#EnergyMassFlowLocation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Temperature -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Temperature">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Measurement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Water -->
+
+    <owl:NamedIndividual rdf:about="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Water">
+        <rdf:type rdf:resource="http://n.ethz.ch/student/ganeshr/ontologies/ba_ont.owl#Media"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
+
