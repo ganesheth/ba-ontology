@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.siemens.com/bt/cc/hqlib#"
+     xml:base="http://www.siemens.com/bt/cc/hqlib"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.siemens.com/bt/cc/ba/ontology">
+        <owl:imports rdf:resource="http://www.siemens.com/bt/cc/ontology"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.siemens.com/bt/cc/ontology#GMS_OM_AGGREGATOR -->
+
+    <owl:Class rdf:about="http://www.siemens.com/bt/cc/ontology#GMS_OM_AGGREGATOR">
+        <rdfs:subClassOf rdf:resource="http://www.siemens.com/bt/cc/ontology#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.siemens.com/bt/cc/ontology#GMS_OM_BACNET_AI -->
+
+    <owl:Class rdf:about="http://www.siemens.com/bt/cc/ontology#GMS_OM_BACNET_AI">
+        <rdfs:subClassOf rdf:resource="http://www.siemens.com/bt/cc/ontology#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasProperty"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.siemens.com/bt/cc/ontology#Property"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasName"/>
+                                <owl:hasValue>PresentValue</owl:hasValue>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.siemens.com/bt/cc/ontology#GMS_OM_BACNET_AO -->
+
+    <owl:Class rdf:about="http://www.siemens.com/bt/cc/ontology#GMS_OM_BACNET_AO">
+        <rdfs:subClassOf rdf:resource="http://www.siemens.com/bt/cc/ontology#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasProperty"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.siemens.com/bt/cc/ontology#Property"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasCommand"/>
+                                <owl:someValuesFrom rdf:resource="http://www.siemens.com/bt/cc/ontology#CommandConfiguration"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasName"/>
+                                <owl:hasValue>PresentValue</owl:hasValue>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.siemens.com/bt/cc/ontology#Room -->
+
+    <owl:Class rdf:about="http://www.siemens.com/bt/cc/ontology#Room">
+        <rdfs:subClassOf rdf:resource="http://www.siemens.com/bt/cc/ontology#FunctionType"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.siemens.com/bt/cc/ontology#FunctionType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasProperty"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.siemens.com/bt/cc/ontology#Property"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasName"/>
+                                        <owl:hasValue>RoomTemperature</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.siemens.com/bt/cc/ontology#Sensor -->
+
+    <owl:Class rdf:about="http://www.siemens.com/bt/cc/ontology#Sensor">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.siemens.com/bt/cc/ontology#FunctionType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasProperty"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.siemens.com/bt/cc/ontology#Property"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasName"/>
+                                        <owl:hasValue>Measurement</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.siemens.com/bt/cc/ontology#Valve -->
+
+    <owl:Class rdf:about="http://www.siemens.com/bt/cc/ontology#Valve">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.siemens.com/bt/cc/ontology#FunctionType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasProperty"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.siemens.com/bt/cc/ontology#Property"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.siemens.com/bt/cc/ontology#hasName"/>
+                                        <owl:hasValue>ValvePosition</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
